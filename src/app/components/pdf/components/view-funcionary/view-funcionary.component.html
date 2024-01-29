@@ -1,0 +1,10 @@
+<div style="display: flex; justify-content: space-between; padding: 30px;">
+  <mat-form-field>
+    <mat-label>Seleccionar el tutor para generar el PDF</mat-label>
+    <mat-select [(value)]="idfuncionary">
+      <mat-option *ngFor="let tutores of dataTutor" [value]="tutores.id_funcionary">{{tutores.name}}
+        {{tutores.surnamefather}} {{tutores.surnamemother}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button class="me-8 mb-8" style="color: white; background-color: #E9B384; border-radius: 15px; margin: 2px; width: 100px;" color="warn" (click)="generarPDF(idfuncionary)">Generar PDF</button>
+</div>

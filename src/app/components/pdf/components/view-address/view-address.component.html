@@ -1,0 +1,11 @@
+<div style="display: flex; justify-content: space-between; padding: 30px;">
+  <mat-form-field>
+    <mat-label>Seleccionar el tutor para generar el PDF</mat-label>
+    <mat-select [(value)]="idTeen">
+      <mat-option *ngFor="let teen of attorneyData" [value]="teen.id_adolescente">{{teen.name}}
+        {{teen.surnamefather}} {{teen.surnamemother}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button class="me-8 mb-8" style="color: white; background-color: #E9B384; border-radius: 15px; margin: 2px; width: 100px;" color="warn" (click)="generarPDF(idTeen)">Generar PDF</button>
+</div>
+

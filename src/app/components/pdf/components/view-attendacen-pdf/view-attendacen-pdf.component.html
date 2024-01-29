@@ -1,0 +1,22 @@
+<div style="display: flex; justify-content: space-between; padding: 30px;">
+
+  <div class="w-2/4">
+    <mat-form-field>
+      <mat-label>Seleccionar Programa</mat-label>
+      <mat-select [(value)]="idPrograms" (selectionChange)="listActivities(idPrograms)">
+        <mat-option *ngFor="let Programs of programsList" [value]="Programs.id">{{Programs.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="idPrograms">
+      <mat-label>Seleccionar el tutor para generar el PDF</mat-label>
+      <mat-select [(value)]="idactiviti">
+        <mat-option *ngFor="let activities of activitiesList" [value]="activities.id">{{activities.name_activities}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div >
+      <button mat-raised-button class="me-8 mb-8" style="color: white; background-color: #E9B384; border-radius: 15px; margin: 2px; width: 100px;" color="warn" (click)="generarPDF(idactiviti)">Generar PDF</button>
+    </div>
+  </div>
+</div>
+
